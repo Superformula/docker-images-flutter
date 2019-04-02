@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    environment:
+      FLUTTER_VERSION: 1.4.7
+    steps:
+      - checkout
+      - run: ./build_docker.sh
+      - run: ./push_docker.sh
