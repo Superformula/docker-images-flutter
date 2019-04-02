@@ -1,9 +1,15 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: circleci/node
+
     environment:
       FLUTTER_VERSION: 1.4.7
+
     steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
       - checkout
       - run: ./build_docker.sh
       - run: ./push_docker.sh
