@@ -17,8 +17,8 @@ then
     exit 0
 fi
 
-docker login --username $DOCKER_USER_NAME --password $DOCKER_PASSWORD
+docker login --username "$DOCKER_USER_NAME" --password "$DOCKER_PASSWORD"
 
 docker push superformula/flutter:base
-docker push superformula/flutter:$FLUTTER_VERSION
+docker push superformula/flutter:"$FLUTTER_VERSION"
 docker push superformula/flutter:latest

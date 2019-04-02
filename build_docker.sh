@@ -7,7 +7,7 @@ set -e
 docker pull superformula/flutter:base
 
 docker build --tag superformula/flutter:base base
-docker build --tag superformula/flutter:$FLUTTER_VERSION \
+docker build --tag superformula/flutter:"$FLUTTER_VERSION" \
              --tag superformula/flutter:latest \
-             --build-arg flutter_version=$FLUTTER_VERSION \
+             --build-arg flutter_version="$FLUTTER_VERSION" \
              sdk
